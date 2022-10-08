@@ -13,11 +13,10 @@ export default Index
 
 export async function getStaticProps() {
   const res = await NotionAPI.getArticleList()
-  console.log(res)
   return {
     props: {
-      res:JSON.stringify(res)
+      res: JSON.stringify(res)
     },
-    revalidate: 10
+    revalidate: 1
   }
 }
