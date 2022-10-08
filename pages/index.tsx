@@ -1,19 +1,22 @@
 import type { NextPage } from 'next'
+import NotionAPI from '../libs/notion/api'
 
-const Home: NextPage = () => {
+const Index: NextPage = ({ res }: any) => {
   return (
     <div>
+      {res}
     </div>
   )
 }
 
-export default Home
+export default Index
 
 export async function getStaticProps() {
-  const time = new Date().getMilliseconds().toString()
+  const res = await NotionAPI.getArticleList()
+  console.log(res)
   return {
     props: {
-      time
+      res:JSON.stringify(res)
     },
     revalidate: 10
   }
