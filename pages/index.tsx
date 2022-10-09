@@ -1,10 +1,15 @@
 import type { NextPage } from 'next'
 import NotionAPI from '../libs/notion/api'
+import { ArticleItem } from '../libs/common/types'
 
-const Index: NextPage = ({ res }: any) => {
+const Index: NextPage = ({ articleList }: any) => {
   return (
     <div>
-      {res}
+      {articleList.map((item: ArticleItem) => (
+        <div key={item.id}>
+          <a href={`/article/${item.id}`}>{item.title}</a>
+        </div>
+      ))}
     </div>
   )
 }
@@ -12,10 +17,10 @@ const Index: NextPage = ({ res }: any) => {
 export default Index
 
 export async function getStaticProps() {
-  const res = await NotionAPI.getArticleList()
+  const articleList = await NotionAPI.getArticleList()
   return {
     props: {
-      res: JSON.stringify(res)
+      articleList: articleList
     },
     revalidate: 1
   }

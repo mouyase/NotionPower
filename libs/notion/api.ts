@@ -2,13 +2,18 @@ import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import cache from '../cache'
 import { getDatabaseData } from './getDatabaseData'
 import { log } from '../common/log'
+import { ArticleItem } from '../common/types'
+import { toJSONObject } from '../common/utils'
 
 enum Type {
+  TEXT = 'text',
   TITLE = 'title',
   RICH_TEXT = 'rich_text',
   SELECT = 'select',
   MULTI_SELECT = 'multi_select',
-  DATE = 'date'
+  DATE = 'date',
+  EXTERNAL = 'external',
+  EMOJI = 'emoji'
 }
 
 const getDataByType = (value: any, type: string, contentType?: string) => {
@@ -22,14 +27,18 @@ const getDataByType = (value: any, type: string, contentType?: string) => {
     case Type.SELECT:
       return value[type]?.name
     case Type.MULTI_SELECT:
-      return
+      return value[type].map((item: any) => item.name)
     case Type.DATE:
       return value[type]?.start
+    case Type.EXTERNAL:
+      return value[type]?.url
+    case Type.EMOJI:
+      return value[type]
   }
   return undefined
 }
 
-const getArticleList = async () => {
+const getArticleList = async (): Promise<ArticleItem[]> => {
   const cacheData = await cache.get('database')
   let data
   if (cacheData) {
@@ -43,22 +52,21 @@ const getArticleList = async () => {
   return data.results.map((item: PageObjectResponse) => {
     const { id, created_time: createdTime, last_edited_time: modifyTime, cover, icon, properties } = item
     const { title, summary, slug, status, tags, type, category, date } = properties
-    console.log(getDataByType(status, Type.SELECT))
-    return {
+    return toJSONObject({
       id,
       createdTime,
       modifyTime,
-      cover,
-      icon,
-      title: getDataByType(title, Type.TITLE, 'text'),
-      summary: getDataByType(summary, Type.RICH_TEXT, 'text'),
+      cover: getDataByType(cover, Type.EXTERNAL),
+      icon: getDataByType(icon, Type.EMOJI),
+      title: getDataByType(title, Type.TITLE, Type.TEXT),
+      summary: getDataByType(summary, Type.RICH_TEXT, Type.TEXT),
       slug: getDataByType(slug, Type.RICH_TEXT),
       status: getDataByType(status, Type.SELECT),
-      tags: getDataByType(status, Type.SELECT),
-      type: getDataByType(type, Type.MULTI_SELECT),
+      tags: getDataByType(tags, Type.MULTI_SELECT),
+      type: getDataByType(type, Type.SELECT),
       category: getDataByType(category, Type.SELECT),
       date: getDataByType(date, Type.DATE)
-    }
+    })
   })
 }
 const NotionAPI = {

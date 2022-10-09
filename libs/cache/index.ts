@@ -2,9 +2,9 @@ import FileCache from './fileCache'
 import MemoryCache from './memoryCache'
 
 let cache: {
-    getCache: (key: string) => any
-    setCache: (key: string, value: any) => void
-    delCache: (key: string) => void
+  getCache: (key: string) => any
+  setCache: (key: string, value: any) => void
+  delCache: (key: string) => void
 }
 
 if (process.env.ENABLE_FILE_CACHE) {
