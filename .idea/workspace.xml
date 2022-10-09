@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f03f434d-a127-40ef-b03e-360b5c3ccd98" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/libs/common/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/common/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/cache/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/cache/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/notion/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/notion/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/notion/getPostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/notion/getPostData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/article/[slug].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/[slug].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +125,7 @@
       <workItem from="1665215609956" duration="2701000" />
       <workItem from="1665218467882" duration="437000" />
       <workItem from="1665218912768" duration="2985000" />
-      <workItem from="1665221905807" duration="7248000" />
+      <workItem from="1665221905807" duration="8166000" />
     </task>
     <task id="LOCAL-00001" summary="WiP: 修改部分配置">
       <created>1665218937500</created>
@@ -163,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665230699170</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="wip: 增加数据转换">
+      <created>1665284870648</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665284870648</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +195,7 @@
     <MESSAGE value="WiP: 修改部分配置" />
     <MESSAGE value="wip: 增加接口数据转换" />
     <MESSAGE value="wip: 修改配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip: 修改配置" />
+    <MESSAGE value="wip: 增加数据转换" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip: 增加数据转换" />
   </component>
 </project>

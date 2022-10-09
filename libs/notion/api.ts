@@ -60,7 +60,7 @@ const getArticleList = async (): Promise<ArticleItem[]> => {
       icon: getDataByType(icon, Type.EMOJI),
       title: getDataByType(title, Type.TITLE, Type.TEXT),
       summary: getDataByType(summary, Type.RICH_TEXT, Type.TEXT),
-      slug: getDataByType(slug, Type.RICH_TEXT),
+      slug: getDataByType(slug, Type.RICH_TEXT, Type.TEXT),
       status: getDataByType(status, Type.SELECT),
       tags: getDataByType(tags, Type.MULTI_SELECT),
       type: getDataByType(type, Type.SELECT),

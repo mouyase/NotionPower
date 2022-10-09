@@ -1,5 +1,10 @@
-const Article = ({ time }: any) => {
-  return (<>{time}</>)
+import NotionAPI from '../../libs/notion/api'
+import { ArticleItem } from '../../libs/common/types'
+import { toJSONString } from '../../libs/common/utils'
+import { getPostData } from '../../libs/notion/getPostData'
+
+const Article = ({ articleProps,article }: any) => {
+  return (<>{article}</>)
 }
 export default Article
 
@@ -11,11 +16,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
-  const time = new Date().getMilliseconds().toString()
+  const articleList = await NotionAPI.getArticleList()
+  const articleProps = articleList.find((item: ArticleItem) => item.slug === slug || item.id === slug)
+  let article
+  if (articleProps) {
+    const a = await getPostData(articleProps.id)
+     article = toJSONString(a)
+  }
   return {
     props: {
-      slug,
-      time
+      article,
+      articleProps
     },
     revalidate: 10
   }
