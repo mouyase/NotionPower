@@ -4,6 +4,7 @@ import { getDatabaseData } from './getDatabaseData'
 import { log } from '../common/log'
 import { ArticleItem } from '../common/types'
 import { toJSONObject } from '../common/utils'
+import { getPostData } from './getPostData'
 
 enum Type {
   TEXT = 'text',
@@ -39,19 +40,18 @@ const getDataByType = (value: any, type: string, contentType?: string) => {
 }
 
 const getArticleList = async (): Promise<ArticleItem[]> => {
-  const cacheData = await cache.get('database')
-  let data
-  if (cacheData) {
-    log('命中缓存', cacheData)
-    data = cacheData
-  } else {
-    const database: any = await getDatabaseData()
-    await cache.set('database', database)
-    data = database
-  }
+  const data = await getDatabase()
   return data.results.map((item: PageObjectResponse) => {
-    const { id, created_time: createdTime, last_edited_time: modifyTime, cover, icon, properties } = item
-    const { title, summary, slug, status, tags, type, category, date } = properties
+    const {
+      id,
+      created_time: createdTime,
+      last_edited_time: modifyTime,
+      cover,
+      icon,
+      properties
+    } = item
+    const { title, summary, slug, status, tags, type, category, date } =
+      properties
     return toJSONObject({
       id,
       createdTime,
@@ -69,7 +69,35 @@ const getArticleList = async (): Promise<ArticleItem[]> => {
     })
   })
 }
+const getDatabase = async () => {
+  const cacheData = await cache.get('database')
+  if (cacheData) {
+    log('命中缓存', '数据库')
+    return cacheData
+  } else {
+    const database: any = await getDatabaseData()
+    await cache.set('database', database)
+    return database
+  }
+}
+const getSingleArticle = async (slug: string) => {
+  const data = await getArticleList()
+  const articleProps = data.find(
+    (item: ArticleItem) => item.slug === slug || item.id === slug
+  )
+  console.log(articleProps)
+  let article
+  if (articleProps) {
+    article = await getPostData(articleProps.id)
+  }
+
+  return toJSONObject({
+    ...articleProps,
+    article
+  })
+}
 const NotionAPI = {
-  getArticleList
+  getArticleList,
+  getSingleArticle
 }
 export default NotionAPI

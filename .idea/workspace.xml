@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f03f434d-a127-40ef-b03e-360b5c3ccd98" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.prettierrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/notion/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/notion/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/notion/getPostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/notion/getPostData.ts" afterDir="false" />
@@ -35,6 +36,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -46,7 +48,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.17.0",
     "javascript.nodejs.core.library.typings.version": "16.11.64",
-    "last_opened_file_path": "/Users/mouyase/Project/web/NotionPowerBlog",
+    "last_opened_file_path": "/Users/mouyase/Project/web/NotionPower",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.stylelint": "true",
@@ -56,10 +58,11 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "/Users/mouyase/.nvm/versions/node/v16.17.0/bin/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "/Users/mouyase/Project/web/NotionPower/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "standardjs.codestyle.accepted": "true",
-    "ts.external.directory.path": "/Users/mouyase/Project/web/NotionPowerBlog/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/mouyase/Project/web/NotionPower/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -125,7 +128,11 @@
       <workItem from="1665215609956" duration="2701000" />
       <workItem from="1665218467882" duration="437000" />
       <workItem from="1665218912768" duration="2985000" />
-      <workItem from="1665221905807" duration="8166000" />
+      <workItem from="1665221905807" duration="14836000" />
+      <workItem from="1665369108602" duration="575000" />
+      <workItem from="1665369763137" duration="669000" />
+      <workItem from="1665370623976" duration="1139000" />
+      <workItem from="1665371895786" duration="248000" />
     </task>
     <task id="LOCAL-00001" summary="WiP: 修改部分配置">
       <created>1665218937500</created>
@@ -169,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665284870648</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="wip: 日常更新">
+      <created>1665285741317</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665285741317</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +210,7 @@
     <MESSAGE value="wip: 增加接口数据转换" />
     <MESSAGE value="wip: 修改配置" />
     <MESSAGE value="wip: 增加数据转换" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip: 增加数据转换" />
+    <MESSAGE value="wip: 日常更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip: 日常更新" />
   </component>
 </project>

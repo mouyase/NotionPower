@@ -9,7 +9,9 @@ const Index: NextPage = ({ articleList }: any) => {
       {toJSONString(articleList)}
       {articleList.map((item: ArticleItem) => (
         <div key={item.id}>
-          <a href={`/article/${item.slug ? item.slug : item.id}`}>{item.title}</a>
+          <a href={`/article/${item.slug ? item.slug : item.id}`}>
+            {item.title}
+          </a>
         </div>
       ))}
     </div>
