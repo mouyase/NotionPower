@@ -85,7 +85,6 @@ const getSingleArticle = async (slug: string) => {
   const articleProps = data.find(
     (item: ArticleItem) => item.slug === slug || item.id === slug
   )
-  console.log(articleProps)
   let article
   if (articleProps) {
     article = await getPostData(articleProps.id)

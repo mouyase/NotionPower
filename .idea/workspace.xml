@@ -46,9 +46,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "16.17.0",
-    "javascript.nodejs.core.library.typings.version": "16.11.64",
-    "last_opened_file_path": "/Users/mouyase/Project/web/NotionPower",
+    "javascript.nodejs.core.library.configured.version": "16.18.0",
+    "javascript.nodejs.core.library.typings.version": "16.11.68",
+    "last_opened_file_path": "F:/web/NotionPower",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.stylelint": "true",
@@ -57,12 +57,12 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/Users/mouyase/.nvm/versions/node/v16.17.0/bin/node",
+    "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "yarn",
     "prettierjs.PrettierConfiguration.Package": "/Users/mouyase/Project/web/NotionPower/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "standardjs.codestyle.accepted": "true",
-    "ts.external.directory.path": "/Users/mouyase/Project/web/NotionPower/node_modules/typescript/lib",
+    "ts.external.directory.path": "F:\\web\\NotionPower\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -133,6 +133,7 @@
       <workItem from="1665369763137" duration="669000" />
       <workItem from="1665370623976" duration="1139000" />
       <workItem from="1665371895786" duration="248000" />
+      <workItem from="1666190683923" duration="1131000" />
     </task>
     <task id="LOCAL-00001" summary="WiP: 修改部分配置">
       <created>1665218937500</created>
