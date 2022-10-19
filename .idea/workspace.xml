@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f03f434d-a127-40ef-b03e-360b5c3ccd98" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/common/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/notion/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/notion/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/notion/getPostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/notion/getPostData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/article/[slug].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/[slug].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
@@ -59,8 +59,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "yarn",
-    "prettierjs.PrettierConfiguration.Package": "/Users/mouyase/Project/web/NotionPower/node_modules/prettier",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "prettierjs.PrettierConfiguration.Package": "F:\\web\\NotionPower\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "JavaScript.Libraries",
     "standardjs.codestyle.accepted": "true",
     "ts.external.directory.path": "F:\\web\\NotionPower\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -133,7 +133,7 @@
       <workItem from="1665369763137" duration="669000" />
       <workItem from="1665370623976" duration="1139000" />
       <workItem from="1665371895786" duration="248000" />
-      <workItem from="1666190683923" duration="1131000" />
+      <workItem from="1666190683923" duration="1422000" />
     </task>
     <task id="LOCAL-00001" summary="WiP: 修改部分配置">
       <created>1665218937500</created>
@@ -184,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665285741317</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="wip: 日常更新">
+      <created>1666191938029</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666191938029</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
