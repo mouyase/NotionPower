@@ -1481,6 +1481,16 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+lxgw-wenkai-lite-webfont@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/lxgw-wenkai-lite-webfont/-/lxgw-wenkai-lite-webfont-1.6.0.tgz#c2156d2156322ee0b8fd7637c1cb0af33ddbbf73"
+  integrity sha512-jSjCZSlRVDEcj9CQoWqtX5xyjZhwfxisvZjZfef/NFBfMTlKQm5bvKDq6l/G230fiQVgCGu/KxtDPu3OlNU+mw==
+
+lxgw-wenkai-screen-webfont@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/lxgw-wenkai-screen-webfont/-/lxgw-wenkai-screen-webfont-1.6.0.tgz#54f4c68df693cf6fc739b3e4d5b5842d47312ec1"
+  integrity sha512-kn03AN6d6N0cbsHmOy53mZayIy1ZoUa1/Ku+uVJdORmb5Kzea2QNkPXbaxonaWusWcajbDBr5EoQKTZvQtv0CA==
+
 memory-cache@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmmirror.com/memory-cache/-/memory-cache-0.2.0.tgz#7890b01d52c00c8ebc9d533e1f8eb17e3034871a"
