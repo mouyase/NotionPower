@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f03f434d-a127-40ef-b03e-360b5c3ccd98" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/common/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/notion/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/notion/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/article/[slug].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/[slug].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.18.0",
     "javascript.nodejs.core.library.typings.version": "16.11.68",
-    "last_opened_file_path": "F:/web/NotionPower",
+    "last_opened_file_path": "F:/web/my-project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.stylelint": "true",
@@ -133,7 +133,8 @@
       <workItem from="1665369763137" duration="669000" />
       <workItem from="1665370623976" duration="1139000" />
       <workItem from="1665371895786" duration="248000" />
-      <workItem from="1666190683923" duration="1422000" />
+      <workItem from="1666190683923" duration="1674000" />
+      <workItem from="1666227225632" duration="472000" />
     </task>
     <task id="LOCAL-00001" summary="WiP: 修改部分配置">
       <created>1665218937500</created>
@@ -191,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666191938029</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="wip: 日常更新">
+      <created>1666192203855</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666192203855</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
