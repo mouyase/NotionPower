@@ -1,4 +1,4 @@
-export interface ArticleItem {
+export interface Article {
   id: string
   createdTime: string
   modifyTime: string

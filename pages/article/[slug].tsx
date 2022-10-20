@@ -1,5 +1,5 @@
 import NotionAPI from '../../libs/notion/api'
-import { ArticleItem } from '../../libs/common/types'
+import { Article } from '../../libs/common/types'
 import { toJSONString } from '../../libs/common/utils'
 import { getPostData } from '../../libs/notion/getPostData'
 

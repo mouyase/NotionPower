@@ -2,7 +2,7 @@ import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import cache from '../cache'
 import { getDatabaseData } from './getDatabaseData'
 import { log } from '../common/log'
-import { ArticleItem } from '../common/types'
+import { Article } from '../common/types'
 import { toJSONObject } from '../common/utils'
 import { getPostData } from './getPostData'
 
@@ -39,7 +39,7 @@ const getDataByType = (value: any, type: string, contentType?: string) => {
   return undefined
 }
 
-const getArticleList = async (): Promise<ArticleItem[]> => {
+const getArticleList = async (): Promise<Article[]> => {
   const data = await getDatabase()
   return data.results.map((item: PageObjectResponse) => {
     const {
@@ -83,9 +83,8 @@ const getDatabase = async () => {
 const getSingleArticle = async (slug: string) => {
   const data = await getArticleList()
   const articleProps = data.find(
-    (item: ArticleItem) => item.slug === slug || item.id === slug
+    (item: Article) => item.slug === slug || item.id === slug
   )
-  console.log(articleProps)
   let article
   if (articleProps) {
     article = await getPostData(articleProps.id)
