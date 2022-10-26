@@ -8,7 +8,7 @@ const ArticleCover = (props: { article: Article }) => {
         src='/cover.webp'
         className='h-56 w-full rounded-t-lg object-cover'
       ></img>
-      <div className='p-5'>
+      <div className='p-5 break-all'>
         <div className='flex w-full flex-col text-2xl'>{article.title}</div>
         <div className='mt-2 mb-2'>{article.summary}</div>
         <div className='flex justify-between'>
