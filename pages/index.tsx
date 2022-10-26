@@ -17,7 +17,7 @@ const IndexPage: NextPage<IIndexPageProp> = (props: IIndexPageProp) => {
   return (
     <div>
       <Navigation />
-      <Content />
+      <Content articleList={articleList}/>
       <Footer />
       {/*{toJSONString(articleList)}*/}
       {/*{articleList.map((item: Article) => (*/}
