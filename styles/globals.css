@@ -5,10 +5,17 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    font-family: "LXGW WenKai Screen", sans-serif;
-}
+@layer base {
+    html::-webkit-scrollbar {
+        @apply w-0
+    }
 
-pre, code {
-    font-family: "LXGW WenKai Mono Lite", sans-serif;
+    html {
+        @apply text-gray-600
+    }
+}
+@layer components {
+    .link {
+        @apply text-black hover:text-blue-400
+    }
 }
