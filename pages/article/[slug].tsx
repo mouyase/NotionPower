@@ -1,21 +1,20 @@
 import NotionAPI from '../../libs/notion/api'
-import { Article } from '../../libs/common/type'
-import { toJSONString } from '../../libs/common/utils'
+import useThemeComponents from '@/libs/hooks/useThemeComponents'
 import { NextPage } from 'next'
 
-
-interface IArticlePageProp {
-  article: Article
-}
-
-const ArticlePage: NextPage<IArticlePageProp> = ({ article }: IArticlePageProp) => {
-  return <>{toJSONString(article)}</>
+const ArticlePage: NextPage = props => {
+  const { LayoutArticle } = useThemeComponents()
+  return <LayoutArticle {...props}></LayoutArticle>
 }
 export default ArticlePage
 
 export async function getStaticPaths() {
+  const allArticle = await NotionAPI.getAllArticle()
+  const paths = allArticle.map(item => {
+    return { params: { slug: item.slug ? item.slug : item.id } }
+  })
   return {
-    paths: [{ params: { slug: '1' } }],
+    paths,
     fallback: true
   }
 }

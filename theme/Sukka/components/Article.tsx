@@ -2,11 +2,11 @@ import dayjs from 'dayjs'
 import { IArticle } from '@/libs/common/type'
 import Link from 'next/link'
 
-interface IArticleCoverProps {
+interface IArticleProps {
   article: IArticle
 }
 
-const ArticleCover = (props: IArticleCoverProps) => {
+const Article = (props: IArticleProps) => {
   const { article } = props
   const url = `/article/${article.slug ? article.slug : article.id}`
   return (
@@ -26,23 +26,21 @@ const ArticleCover = (props: IArticleCoverProps) => {
       )}
       <div className="break-all p-5">
         <Link href={url}>
-          <a className="cursor-pointer">
+          <a
+            className="cursor-pointer"
+            href={`/article/${article.slug ? article.slug : article.id}`}
+          >
             <div className="flex w-full flex-col text-2xl">{article.title}</div>
           </a>
         </Link>
-        {article.summary && <div className="mt-2">{article.summary}</div>}
-        <div className="mt-2 flex justify-between">
+        <div className="mt-2 flex">
           <div className="text-gray-400">
             {dayjs(article.date).format('YYYY-MM-DD')}
           </div>
-          <Link href={url}>
-            <a className="link text-blue-400" href={url}>
-              继续阅读
-            </a>
-          </Link>
         </div>
+        {JSON.stringify(article)}
       </div>
     </div>
   )
 }
-export default ArticleCover
+export default Article

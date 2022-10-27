@@ -2,9 +2,9 @@ import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import cache from '../cache'
 import { getDatabaseData } from './getDatabaseData'
 import { log } from '../common/log'
-import { Article } from '../common/type'
+import { IArticle } from '../common/type'
 import { toJSONObject } from '../common/utils'
-import { getPostData } from './getPostData'
+import { getBlockData } from './getBlockData'
 
 enum Type {
   TEXT = 'text',
@@ -39,7 +39,7 @@ const getDataByType = (value: any, type: string, contentType?: string) => {
   return undefined
 }
 
-const getAllArticle = async (): Promise<Article[]> => {
+const getAllArticle = async (): Promise<IArticle[]> => {
   const data = await getDatabase()
   return data.results.map((item: PageObjectResponse) => {
     const {
@@ -83,17 +83,15 @@ const getDatabase = async () => {
 const getArticle = async (slug: string) => {
   const data = await getAllArticle()
   const articleProps = data.find(
-    (item: Article) => item.slug === slug || item.id === slug
+    (item: IArticle) => item.slug === slug || item.id === slug
   )
-  let article
   if (articleProps) {
-    article = await getPostData(articleProps.id)
+    const article = await getBlockData(articleProps.id)
+    return toJSONObject({
+      ...articleProps,
+      article
+    })
   }
-
-  return toJSONObject({
-    ...articleProps,
-    article
-  })
 }
 
 const getArticleListWithPage = async (pageSize: number, pageNumber: number) => {

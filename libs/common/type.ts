@@ -1,4 +1,10 @@
-export interface Article {
+export interface IUserData {
+  id: string
+  name: string
+  avatar: string
+}
+
+export interface IArticle {
   id: string
   createdTime: string
   modifyTime: string

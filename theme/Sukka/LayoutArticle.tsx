@@ -1,6 +1,8 @@
-const LayoutArticle = (props: any) => {
-  return (
-    <div className="flex w-full flex-col items-center rounded-lg bg-white p-8 shadow-xl"></div>
-  )
+import LayoutBase from '@/theme/Sukka/LayoutBase'
+import { IArticleProps } from '@/theme/type'
+
+const LayoutArticle = (props: IArticleProps) => {
+  const { article } = props
+  return <LayoutBase type="article" article={article}></LayoutBase>
 }
 export default LayoutArticle

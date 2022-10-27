@@ -3,15 +3,17 @@ import Navigation from './components/Navigation'
 import Side from './components/Side'
 import UserInfo from './components/UserInfo'
 import ArticleList from './components/ArticleList'
-import { Article } from '@/libs/common/type'
+import { IArticle } from '@/libs/common/type'
+import Article from './components/Article'
 
 interface IProps {
   type: 'index' | 'article' | 'post'
-  articleList?: Article[]
+  article?: IArticle
+  articleList?: IArticle[]
 }
 
 const LayoutBase = (props: IProps) => {
-  const { type, articleList } = props
+  const { type, article, articleList } = props
   return (
     <>
       <Navigation />
@@ -20,9 +22,14 @@ const LayoutBase = (props: IProps) => {
           <Side className="w-72 flex-shrink-0">
             <UserInfo></UserInfo>
           </Side>
-          {type === 'index' && (
-            <ArticleList articleList={articleList}></ArticleList>
-          )}
+          <div className="w-full pl-5 pr-5">
+            {type === 'index' && articleList && (
+              <ArticleList articleList={articleList}></ArticleList>
+            )}
+            {type === 'article' && article && (
+              <Article article={article}></Article>
+            )}
+          </div>
           <Side className="w-72 flex-shrink-0"></Side>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { getChildren } from '../../../libs/common/utils'
+import { getReactChildren } from '../../../libs/common/utils'
 
 interface IProps {
   className?: string
@@ -8,7 +8,7 @@ interface IProps {
 
 const Side: React.FC<IProps> = (props: IProps) => {
   const { children: originChildren, className } = props
-  const children = getChildren(originChildren)
+  const children = getReactChildren(originChildren)
   return (
     <div className={className}>
       <div className="flex w-full flex-col">

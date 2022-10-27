@@ -1,5 +1,9 @@
-import { Article } from '../libs/common/type'
+import { IArticle } from '../libs/common/type'
 
 export interface IIndexProps {
-  articleList?: Article[]
+  articleList?: IArticle[]
+}
+
+export interface IArticleProps {
+  article?: IArticle
 }
