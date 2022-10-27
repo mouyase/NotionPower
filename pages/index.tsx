@@ -1,24 +1,16 @@
+import useThemeComponents from '@/libs/hooks/useThemeComponents'
+import NotionAPI from '@/libs/notion/api'
 import type { NextPage } from 'next'
-import NotionAPI from '../libs/notion/api'
-import { Article } from '../libs/common/types'
-import { toJSONString } from '../libs/common/utils'
-import Navigation from '../components/Navigation'
-import Content from '../components/Content'
-import Head from 'next/head'
-import Footer from '../components/Footer'
 
-interface IIndexPageProp {
-  articleList: Article[]
-}
-
-const IndexPage: NextPage<IIndexPageProp> = (props: IIndexPageProp) => {
-  const { articleList } = props
-  console.log(articleList)
+const IndexPage: NextPage = props => {
+  const { LayoutIndex } = useThemeComponents()
   return (
     <div>
-      <Navigation />
-      <Content articleList={articleList}/>
-      <Footer />
+      {/*{JSON.stringify(articleList)}*/}
+      <LayoutIndex {...props}></LayoutIndex>
+      {/*<Navigation />*/}
+      {/*<Content articleList={articleList}/>*/}
+      {/*<Footer />*/}
       {/*{toJSONString(articleList)}*/}
       {/*{articleList.map((item: Article) => (*/}
       {/*  <div key={item.id} className="p-4">*/}
@@ -41,7 +33,7 @@ const IndexPage: NextPage<IIndexPageProp> = (props: IIndexPageProp) => {
 export default IndexPage
 
 export async function getStaticProps() {
-  const articleList = await NotionAPI.getArticleList()
+  const articleList = await NotionAPI.getArticleListWithPage(10, 1)
   return {
     props: {
       articleList

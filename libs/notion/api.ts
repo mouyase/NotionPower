@@ -2,7 +2,7 @@ import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import cache from '../cache'
 import { getDatabaseData } from './getDatabaseData'
 import { log } from '../common/log'
-import { Article } from '../common/types'
+import { Article } from '../common/type'
 import { toJSONObject } from '../common/utils'
 import { getPostData } from './getPostData'
 
@@ -39,7 +39,7 @@ const getDataByType = (value: any, type: string, contentType?: string) => {
   return undefined
 }
 
-const getArticleList = async (): Promise<Article[]> => {
+const getAllArticle = async (): Promise<Article[]> => {
   const data = await getDatabase()
   return data.results.map((item: PageObjectResponse) => {
     const {
@@ -80,8 +80,8 @@ const getDatabase = async () => {
     return database
   }
 }
-const getSingleArticle = async (slug: string) => {
-  const data = await getArticleList()
+const getArticle = async (slug: string) => {
+  const data = await getAllArticle()
   const articleProps = data.find(
     (item: Article) => item.slug === slug || item.id === slug
   )
@@ -95,8 +95,18 @@ const getSingleArticle = async (slug: string) => {
     article
   })
 }
+
+const getArticleListWithPage = async (pageSize: number, pageNumber: number) => {
+  const data = await getAllArticle()
+  let offset = (pageNumber - 1) * pageSize
+  return offset + pageSize >= data.length
+    ? data.slice(offset, data.length)
+    : data.slice(offset, offset + pageSize)
+}
+
 const NotionAPI = {
-  getArticleList,
-  getSingleArticle
+  getAllArticle,
+  getArticle,
+  getArticleListWithPage
 }
 export default NotionAPI

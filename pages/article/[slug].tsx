@@ -1,7 +1,6 @@
 import NotionAPI from '../../libs/notion/api'
-import { Article } from '../../libs/common/types'
+import { Article } from '../../libs/common/type'
 import { toJSONString } from '../../libs/common/utils'
-import { getPostData } from '../../libs/notion/getPostData'
 import { NextPage } from 'next'
 
 
@@ -22,7 +21,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
-  const article = await NotionAPI.getSingleArticle(slug)
+  const article = await NotionAPI.getArticle(slug)
   return {
     props: {
       article
