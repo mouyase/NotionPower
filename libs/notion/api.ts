@@ -1,10 +1,10 @@
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import cache from '../cache'
-import { getDatabaseData } from './getDatabaseData'
+import { getDatabaseData } from './client'
 import { log } from '../common/log'
 import { IArticle } from '../common/type'
 import { toJSONObject } from '../common/utils'
-import { getBlockData } from './getBlockData'
+import { getBlockData } from './client'
 
 enum Type {
   TEXT = 'text',
