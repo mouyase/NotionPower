@@ -1,0 +1,21 @@
+@import 'lxgw-wenkai-lite-webfont/style.css';
+@import 'lxgw-wenkai-screen-webfont/style.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html::-webkit-scrollbar {
+        @apply w-0
+    }
+
+    html {
+        @apply text-gray-600
+    }
+}
+@layer components {
+    .link {
+        @apply text-black hover:text-blue-400
+    }
+}
